@@ -11,6 +11,8 @@ const current_weather = `current.json?key=${key}&q=${location}`;
 const forecast = `forecast.json?key=${key}&q=${location}&days=7`;
 //URLs
 export const currentWeatherURL = () => `${base_url}${current_weather}`;
+export const searchWeatherURL = (city_name) =>
+    `${base_url}search.json?key=${key}&q=${city_name}`;
 export const forecastURL = () => `${base_url}${forecast}`;
 
-// console.log(forecastURL());
+// console.log(searchWeatherURL("Tezpur"));
