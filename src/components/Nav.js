@@ -30,7 +30,7 @@ const Nav = ({ setCityName, inputCity, setInputCity }) => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <p className="nav-link disabled">An weather app for all</p>
+                        <p className="nav-link disabled">An Weather App For Everything</p>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
