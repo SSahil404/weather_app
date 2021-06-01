@@ -7,6 +7,7 @@ const Nav = ({ setCityName, inputCity, setInputCity }) => {
     const searchHandler = (e) => {
         e.preventDefault();
         setCityName(inputCity);
+        localStorage.setItem("city", inputCity);
         setInputCity("");
     };
 
@@ -22,6 +23,7 @@ const Nav = ({ setCityName, inputCity, setInputCity }) => {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
             >
+                Search a City&nbsp;
                 <span className="navbar-toggler-icon"></span>
             </button>
 

@@ -7,12 +7,12 @@ import Weather from "./components/Weather";
 import "./index.css";
 
 function App() {
-    const [cityName, setCityName] = useState("Guwahati, Assam");
+    const [cityName, setCityName] = useState("Guwahati");
     const [inputCity, setInputCity] = useState("");
     return (
         <div className="App">
             <Nav setCityName={setCityName} inputCity={inputCity} setInputCity={setInputCity} />
-            <Weather cityName={cityName} />
+            <Weather cityName={cityName} setCityName={setCityName} />
         </div>
     );
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { forecastURL } from "../api";
 
-const Weather = ({ cityName }) => {
+const Weather = ({ cityName, setCityName }) => {
     const [location, setLocation] = useState("");
     const [weather, setWeather] = useState([]);
     const [weatherCondition, setWeatherCondition] = useState([]);
@@ -13,9 +13,14 @@ const Weather = ({ cityName }) => {
     const [cityFound, setCityFound] = useState(false);
 
     useEffect(() => {
+        if (localStorage.getItem("city") !== null) {
+            setCityName(localStorage.getItem("city"));
+        }
+
         const data = axios.get(forecastURL(cityName));
         data.then((response) => {
-            console.log(response);
+            // console.log(response);
+
             setWeather(response.data.current);
             setWeatherCondition(response.data.current.condition);
             setLocation(response.data.location);
@@ -25,7 +30,7 @@ const Weather = ({ cityName }) => {
         }).catch(() => {
             setCityFound(false);
         });
-    }, [cityName]);
+    }, [cityName, setCityName]);
     return (
         <>
             {cityFound || (
